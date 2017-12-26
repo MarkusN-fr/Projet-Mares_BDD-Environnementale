@@ -1,0 +1,74 @@
+load("Z:/Analyses Statistiques/Projet mares/Workspace 16 04.RData")
+ls
+ls()
+View(Amfreville)
+View(bdd)
+summar(bddw32)
+summary(bddw32)
+dudi.acm(bddw32)
+library(ade4)
+dudi.acm(bddw32)
+dim(bddw32)
+View(bddw32)
+colnames(bddw32)
+acm32 <- dudi.acm(bddw32)
+scatter(acm32)
+acm32$tab
+dim(acm32$tab)
+s.label(acm32$li)
+plot(hclust(dist(acm32$li)))
+dist(acm32$li)
+dim(acm32$tab)
+head(acm32$li)
+head(dist(acm32$li))
+cutree(hclust(dist(acm32$li)), k=4)
+dim(cutree(hclust(dist(acm32$li)), k=4))
+length(cutree(hclust(dist(acm32$li)), k=4))
+cutree(hclust(dist(acm32$li)), k=4) -> cut4
+s.class(acm32$li, cut4)
+s.class(acm32$li, factor(cut4))
+table(bddw32[,1])
+table(bddw32[,1], cut4)
+table(bddw32[,2], cut4)
+chisq.test(bddw32[,1], cut4)
+chisq.test(table(bddw32[,2], cut4))
+chisq.test(bddw32[,1], cut4)
+plot(hclust(dist(acm32$li)))
+pam(acm32$li, k=2)
+?pam
+??pam
+libary(clusters)
+library(clusters)
+library(cluster)
+pam(acm32$li, k=2)
+plot(pam(acm32$li, k=2))
+plot(pam(acm32$li, k=3))
+plot(pam(acm32$li, k=4))
+plot(pam(acm32$li, k=5))
+plot(pam(acm32$li, k=20))
+pam3 <- pam(acm32$li, k=3)
+pam3
+s.class(acm32$li, pam3$clustering)
+s.class(acm32$li, factor(pam3$clustering))
+pam3$medoids
+pam3$medois[pam3$medoids==3]
+pam3$medoids[pam3$medoids==3]
+pam3$medoids[pam3$medoids=="3"]
+acm32$li[pam3$clustering==1]
+acm32$li[pam3$clustering==1,]
+acm32$li[pam3$clustering==1,] -> p31
+pam(p31, k=2)
+plot(pam(p31, k=2))
+plot(pam(p31, k=3))
+plot(pam(p31, k=4))
+pam(p31, k=4) -> pam314
+s.class(acm32$li, factor(pam3$clustering))
+s.class(p31, factor(pam314$clustering))
+s.class(p31, factor(pam314$clustering), add.plot=TRUE)
+s.class(acm32$li, factor(pam3$clustering))
+s.class(p31, factor(pam314$clustering), add.plot=TRUE)
+s.class(acm32$li, factor(pam3$clustering))
+s.class(p31, factor(pam314$clustering), add.plot=TRUE, col="red")
+s.class(acm32$li, factor(pam3$clustering))
+s.class(p31, factor(pam314$clustering), add.plot=TRUE, col=c(rep("red", 4)))
+savehistory("Z:/Analyses Statistiques/Projet mares/history.txt")
