@@ -1,7 +1,7 @@
 ## Analyse données 2017
 
 
-### Objectif : analyse multivarié et voir l'intérêt de chaque variable et faire des groupes
+### Objectif : analyses multivariés et voir l'intérêt de chaque variable et faire des groupes
 
 
 
